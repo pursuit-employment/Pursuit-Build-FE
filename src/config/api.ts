@@ -1,4 +1,6 @@
-const API_BASE_URL = 'http://localhost:9000';
+const API_BASE_URL = process.env.NODE_ENV === 'production'
+  ? 'https://pursuit-build-be.onrender.com'
+  : 'http://localhost:9000';
 
 export const API_ENDPOINTS = {
   projects: `${API_BASE_URL}/projects`,
