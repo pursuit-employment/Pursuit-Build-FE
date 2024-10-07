@@ -46,9 +46,20 @@ const Button = styled.button`
   }
 `;
 
-const ProjectDetail = () => {
-  const { id } = useParams();
-  const project = projectData.find(p => p.id === parseInt(id));
+interface Project {
+  id: number;
+  title: string;
+  requester: string;
+  productManager: string;
+  status: string;
+  supporters: number; // Changed from string to number
+  contributors: number;
+  description: string;
+}
+
+const ProjectDetail: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const project: Project | undefined = projectData.find(p => p.id === parseInt(id || ''));
 
   if (!project) {
     return <div>Project not found</div>;

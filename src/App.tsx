@@ -1,8 +1,8 @@
 import './App.css'
-import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import styled from 'styled-components'
-import { AuthProvider, useAuth } from './context/AuthContext'
+import { AuthProvider } from './context/AuthContext'
 
 // Layout 
 import Header from './layout/header/header'
@@ -40,7 +40,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path='/create-account' element={<CreateAccount />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
-            {/* <Route path="/projects/edit/:id" element={<EditProject />} /> */}
           </Routes>
         </PageContainer>
         <Footer />

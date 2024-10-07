@@ -34,15 +34,27 @@ const CommentContent = styled.p`
   color: #444;
 `;
 
-const Comment = ({ comment }) => {
-  const [userData, setUserData] = React.useState(null);
+interface CommentProps {
+  comment: {
+    user_id: number;
+    created_at: string;
+    content: string;
+  };
+}
+
+interface UserData {
+  name: string;
+}
+
+const Comment: React.FC<CommentProps> = ({ comment }) => {
+  const [userData, setUserData] = React.useState<UserData | null>(null);
 
   React.useEffect(() => {
     const fetchUserData = async () => {
       try {
         const response = await fetch(`${API_BASE_URL}/users/${comment.user_id}`);
-        const data = await response.json();
-        console.log(data)
+        const data: UserData = await response.json();
+        console.log(data);
         setUserData(data);
       } catch (error) {
         console.error('Error fetching user data:', error);

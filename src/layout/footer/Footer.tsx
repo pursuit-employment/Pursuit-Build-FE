@@ -16,7 +16,11 @@ const FooterContent = styled.div`
   justify-content: space-between;
 `;
 
-const FooterColumn = styled.div`
+interface FooterColumnProps {
+  width: string;
+}
+
+const FooterColumn = styled.div<FooterColumnProps>`
   flex: ${props => props.width};
   margin-bottom: 20px;
 
@@ -40,7 +44,7 @@ const FooterLink = styled.a`
   }
 `;
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <FooterContent>

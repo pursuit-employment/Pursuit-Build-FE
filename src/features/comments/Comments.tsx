@@ -7,7 +7,6 @@ import API_BASE_URL from '../../config/api';
 import NewComment from './NewComment';
 import Comment from './Comment';
 
-
 const CommentsContainer = styled.div`
   margin-top: 20px;
 `;
@@ -36,17 +35,29 @@ const PageButton = styled.button`
   }
 `;
 
-const Comments = ({ projectId }) => {
-  const [comments, setComments] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalCount, setTotalCount  ] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+interface CommentType {
+  id: number;
+  user_id: number;
+  created_at: string;
+  content: string;
+  // Add any other properties that your comment object might have
+}
 
-  const fetchComments = async (page) => {
+interface CommentsProps {
+  projectId: number;
+}
+
+const Comments: React.FC<CommentsProps> = ({ projectId }) => {
+  const [comments, setComments] = useState<CommentType[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalCount, setTotalCount] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchComments = async (page: number): Promise<void> => {
     try {
       setLoading(true);
-      console.log(page)
+      console.log(page);
       const response = await axios.get(`${API_BASE_URL}/projects/${projectId}/comments?page=${page}`);
       setComments(response.data.comments);
       setTotalCount(response.data.totalCount);

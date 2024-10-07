@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import API_BASE_URL from '../../config/api';
-import { useAuth } from '../../context/AuthContext'; // Assuming this is where the useAuth hook is defined
+import { useAuth } from '../../context/AuthContext';
 
 const NewCommentForm = styled.form`
   margin-top: 20px;
@@ -31,11 +31,16 @@ const SubmitButton = styled.button`
   }
 `;
 
-const NewComment = ({ projectId, onCommentAdded }) => {
-  const [content, setContent] = useState('');
-  const { isAuthenticated } = useAuth(); // Add this line
+interface NewCommentProps {
+  projectId: number;
+  onCommentAdded: (commentId: number) => void;
+}
 
-  const handleSubmit = async (e) => {
+const NewComment: React.FC<NewCommentProps> = ({ projectId, onCommentAdded }) => {
+  const [content, setContent] = useState<string>('');
+  const { isAuthenticated } = useAuth();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isAuthenticated) {
       console.error('User not authenticated');
@@ -47,7 +52,7 @@ const NewComment = ({ projectId, onCommentAdded }) => {
         { content, projectId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      onCommentAdded(1);
+      onCommentAdded(response.data.id); // Assuming the API returns the new comment's ID
       setContent('');
     } catch (error) {
       console.error('Error submitting comment:', error);
@@ -58,7 +63,7 @@ const NewComment = ({ projectId, onCommentAdded }) => {
     <NewCommentForm onSubmit={handleSubmit}>
       <CommentTextArea
         value={content}
-        onChange={(e) => setContent(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setContent(e.target.value)}
         placeholder="Have thoughts? We want to hear them!"
         required
       />
