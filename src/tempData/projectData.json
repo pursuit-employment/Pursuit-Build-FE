@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "AI-powered Resume Builder",
+    "requester": "John Doe",
+    "productManager": "Sarah Johnson",
+    "status": "In Development",
+    "supporters": 42,
+    "contributors": 8,
+    "description": "An intelligent tool that uses AI to help job seekers create tailored, professional resumes based on job descriptions and industry trends."
+  },
+  {
+    "id": 2,
+    "title": "Virtual Career Fair Platform",
+    "requester": "Emily Chen",
+    "productManager": "Michael Brown",
+    "status": "MVP",
+    "supporters": 78,
+    "contributors": 12,
+    "description": "An interactive online platform for hosting virtual career fairs, connecting job seekers with potential employers through video chats, webinars, and digital booths."
+  },
+  {
+    "id": 3,
+    "title": "Skills Assessment Tool",
+    "requester": "Alex Rodriguez",
+    "productManager": "Lisa Wong",
+    "status": "Gathering Requirements",
+    "supporters": 35,
+    "contributors": 5,
+    "description": "A comprehensive tool to assess and evaluate job seekers' skills through adaptive quizzes, coding challenges, and simulated work scenarios."
+  },
+  {
+    "id": 4,
+    "title": "Mentor Matching System",
+    "requester": "Rachel Green",
+    "productManager": "David Miller",
+    "status": "Under Review",
+    "supporters": 56,
+    "contributors": 3,
+    "description": "An intelligent system that matches mentors and mentees based on skills, career goals, and personality traits to foster meaningful professional relationships."
+  },
+  {
+    "id": 5,
+    "title": "Job Market Analyzer",
+    "requester": "Tom Wilson",
+    "productManager": "Jessica Lee",
+    "status": "Maintenance",
+    "supporters": 92,
+    "contributors": 15,
+    "description": "A data-driven tool that analyzes job market trends, salary information, and skill demands to provide insights for career planning and job searching."
+  },
+  {
+    "id": 6,
+    "title": "Interview Simulator",
+    "requester": "Olivia Taylor",
+    "productManager": "Chris Anderson",
+    "status": "Deprecated",
+    "supporters": 28,
+    "contributors": 6,
+    "description": "An AI-powered interview simulation platform that helps job seekers practice and improve their interviewing skills through realistic scenarios and feedback."
+  },
+  {
+    "id": 7,
+    "title": "Networking Event Organizer",
+    "requester": "Daniel Kim",
+    "productManager": "Emma Watson",
+    "status": "In Development",
+    "supporters": 63,
+    "contributors": 9,
+    "description": "A comprehensive tool for planning, managing, and facilitating professional networking events, both in-person and virtual, to foster connections and career growth."
+  }
+]

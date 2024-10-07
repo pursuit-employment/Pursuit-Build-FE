@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Galano Grotesque";
+  src: url("/fonts/GalanoGrotesque-Regular.woff2") format("woff2"),
+       url("/fonts/GalanoGrotesque-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Galano Grotesque";
+  src: url("/fonts/GalanoGrotesque-Medium.woff2") format("woff2"),
+       url("/fonts/GalanoGrotesque-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Galano Grotesque";
+  src: url("/fonts/GalanoGrotesque-Bold.woff2") format("woff2"),
+       url("/fonts/GalanoGrotesque-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+:root {
+  font-family: "Galano Grotesque", Helvetica, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #4242ea;
+  --primary-color-dark: #09097c;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+    /* Add more color variables as needed */
+  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
