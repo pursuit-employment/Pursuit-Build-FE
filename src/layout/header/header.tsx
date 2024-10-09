@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const HeaderParent = styled.header`
   background-color: var(--primary-color);
+  position: relative;
 `;  
 
 const HeaderContainer = styled.header`
@@ -53,10 +54,11 @@ const HamburgerIcon = styled.div`
   width: 44px;
   height: 44px;
   padding: 10px;
-  color: black;
+  color: white;
   font-size: 24px;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
 
   @media (max-width: 640px) {
     display: flex;
@@ -69,9 +71,10 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
   position: absolute;
   top: 60px;
   right: 0;
-  background-color: #fff;
+  background-color: var(--primary-color);
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 
   @media (min-width: 641px) {
     display: none;
@@ -100,6 +103,9 @@ const Header: React.FC = () => {
             <NavItem href="/projects/new">Start New Project</NavItem>
             <NavItem href="/projects">Current Projects</NavItem>
             <NavItem href="/about">About</NavItem>
+            {!isAuthenticated && (
+              <NavItem href="/create-account">Create Account</NavItem>
+            )}
             {isAuthenticated ? (
               <NavItem href="#" onClick={handleLogout}>Log Out</NavItem>
             ) : (
@@ -111,6 +117,9 @@ const Header: React.FC = () => {
             <NavItem href="/projects/new">Start New Project</NavItem>
             <NavItem href="/projects">Current Projects</NavItem>
             <NavItem href="/about">About</NavItem>
+            {!isAuthenticated && (
+              <NavItem href="/create-account">Create Account</NavItem>
+            )}
             {isAuthenticated ? (
               <NavItem href="#" onClick={handleLogout}>Log Out</NavItem>
             ) : (
